@@ -1,10 +1,10 @@
 'use strict';
 
-function User() {
-    this.firstName =
-        this.lastName =
-        var date = new Date();
-    this.regDate = date.toDateString;
+function User(personal) {
+    this.firstName = personal.firstName;
+    this.lastName = personal.lastName;
+    var date = new Date();
+    this.regDate = date.toString();
 }
 
 function UserList() {
@@ -22,16 +22,16 @@ function UserList() {
     };
 }
 
-var x = new UserList();
+var list = new UserList();
 
 while (promptName !== null) {
-    var promptName = prompt('Enter your full name');
+    var promptName = prompt('Введите ваши имя и фамилию', 'Вилли Токарев');
     if (promptName !== null) {
-        x.add(new User({
+        list.add(new User({
             firstName: promptName.trim().split(' ')[0],
             lastName: promptName.trim().split(' ')[1]
         }));
     } else {
-        console.log(x.getAllUsers());
+        console.log(list.getAllUsers());
     }
 }
