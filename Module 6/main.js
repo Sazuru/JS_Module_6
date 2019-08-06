@@ -8,9 +8,10 @@ function User(personal) {
 }
 
 function UserList() {
+    var i;
     this.users = [];
-    for (var i = 0; i < this.users.length; i++) {
-        if (users[i] == promptName) {
+    for (i = 0; i < this.users.length; i++) {
+        if (users[i] === userName) {
             return;
         }
     }
@@ -24,14 +25,16 @@ function UserList() {
 
 var list = new UserList();
 
-while (promptName !== null) {
-    var promptName = prompt('Введите ваши имя и фамилию', 'Вилли Токарев');
-    if (promptName !== null) {
+while (userName !== null) {
+    var userName = prompt('Введите ваши имя и фамилию', 'Вилли Токарев');
+    if (userName !== null) {
         list.add(new User({
-            firstName: promptName.trim().split(' ')[0],
-            lastName: promptName.trim().split(' ')[1]
+            firstName: userName.split(' ')[0],
+            lastName: userName.split(' ')[1]
         }));
-    } else {
-        console.log(list.getAllUsers());
     }
 }
+
+list.getAllUsers().forEach(function (c, i) {
+    console.log(i + 1 + '. ' + c.firstName + ' ' + c.lastName + ' Reg date: ' + c.regDate);
+});
