@@ -8,9 +8,8 @@ function User(personal) {
 }
 
 function UserList() {
-    var i;
     this.users = [];
-    for (i = 0; i < this.users.length; i++) {
+    for (var i = 0; i < this.users.length; i++) {
         if (users[i] === userName) {
             return;
         }
@@ -35,6 +34,6 @@ while (userName !== null) {
     }
 }
 
-list.getAllUsers().forEach(function (c, i) {
-    console.log(i + 1 + '. ' + c.firstName + ' ' + c.lastName + ' Reg date: ' + c.regDate);
+list.getAllUsers().forEach(function (a, i) {
+    console.log(i + 1 + '. ' + a.firstName + ' ' + a.lastName + ', ' + 'дата регистрации: ' + a.regDate);
 });
