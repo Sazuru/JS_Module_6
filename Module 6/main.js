@@ -9,11 +9,6 @@ function User(personal) {
 
 function UserList() {
     this.users = [];
-    for (var i = 0; i < this.users.length; i++) {
-        if (users[i] === userName) {
-            return;
-        }
-    }
     this.add = function (user) {
         this.users.push(user);
     };
