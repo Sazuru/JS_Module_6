@@ -1,0 +1,43 @@
+Module 4-2 дополнение
+Module 4-2 дополнение
+
+18 июля 2019 г.
+11:53
+
+var d = new Date();
+var week = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+var month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+var weekNow = week[d.getDay()];
+var monthNow = month[d.getMonth()];
+var day = d.getDate();
+var year = d.getFullYear();
+var hour = d.getHours();
+var minute = d.getMinutes();
+var sec = d.getSeconds();
+
+//Склонение зависит от последней цифры числа.
+//Str1 Час Минута Секунда: 1.
+//Str2  Часов Минут Секунд: 0, 5, 6, 7, 8, 9.
+//Str3 Часа Минуты Секунды: 2, 3, 4.
+
+function rightTime(num, str1, str2, str3){
+  numEnd = num % 10;
+  if (num>=11 && num<=19) {
+    return num+' '+str2;
+  } else if (num == 1 || numEnd == 1) {
+    return num+' '+str1;
+  } else if (num>=2 && num<=4) {
+    return num+' '+str3;
+  } else if (numEnd>=2 && numEnd<=4) {
+    return num+' '+str3;
+  } else {
+    return num+' '+str2;
+  }
+}
+
+var h = rightTime(hour, 'час', 'часов', 'часа');
+var m = rightTime(minute, 'минута', 'минут', 'минуты');
+var s = rightTime(sec, 'секунда', 'секунд', 'секунды');
+
+alert('Сегодня' + ' ' + day + ' ' + monthNow + ' ' + year + ' ' + 'года,' + ' ' + weekNow + ', '+ h+' '+m+' '+s)
