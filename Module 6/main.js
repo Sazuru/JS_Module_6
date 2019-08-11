@@ -1,9 +1,5 @@
 'use strict';
 
-function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-}
-
 function User(personal) {
     this.firstName = personal.firstName;
     this.lastName = personal.lastName;
@@ -13,13 +9,13 @@ function User(personal) {
 
 function UserList() {
     this.users = [];
-        this.add = function (user) {
-            if (this.users.every(elem => elem.firstName != user.firstName || elem.lastName != user.lastName)) {
-                this.users.push(user);
-            } else {
-                alert('Такой пользователь уже есть!');
-            }
-        };
+    this.add = function (user) {
+        if (this.users.every(elem => elem.firstName != user.firstName || elem.lastName != user.lastName)) {
+            this.users.push(user);
+        } else {
+            alert('Такой пользователь уже есть!');
+        }
+    };
     this.getAllUsers = function () {
         return this.users;
     };
@@ -35,9 +31,9 @@ while (userName !== null) {
         }));
     }
     for (var i = 0; i < list.users.length; i++) {
-        if (isNumeric(list.users[i].firstName) == true || isNumeric(list.users[i].lastName) == true) {
+        if (/[0-9]/.test(list.users[i].firstName) == true || /[0-9]/.test(list.users[i].lastName) == true) {
             alert('Пожалуйста, не вводите цифры!');
-            location.reload();
+            list.users.splice(i, 1);
         }
     }
 }
