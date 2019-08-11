@@ -13,14 +13,17 @@ function User(personal) {
 
 function UserList() {
     this.users = [];
-    this.add = function (user) {
-        this.users.push(user);
-    };
+        this.add = function (user) {
+            if (this.users.every(elem => elem.firstName != user.firstName || elem.lastName != user.lastName)) {
+                this.users.push(user);
+            } else {
+                alert('Такой пользователь уже есть!');
+            }
+        };
     this.getAllUsers = function () {
         return this.users;
     };
-}
-
+};
 var list = new UserList();
 
 while (userName !== null) {
