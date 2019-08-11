@@ -10,7 +10,9 @@ function User(personal) {
 function UserList() {
     this.users = [];
     this.add = function (user) {
-        if (this.users.every(elem => elem.firstName != user.firstName || elem.lastName != user.lastName)) {
+        if (this.users.every(function (elem) {
+                return elem.firstName != user.firstName || elem.lastName != user.lastName
+            })) {
             this.users.push(user);
         } else {
             alert('Такой пользователь уже есть!');
