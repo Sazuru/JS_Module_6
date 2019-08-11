@@ -1,5 +1,9 @@
 'use strict';
 
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function User(personal) {
     this.firstName = personal.firstName;
     this.lastName = personal.lastName;
@@ -27,8 +31,14 @@ while (userName !== null) {
             lastName: userName.split(' ')[1]
         }));
     }
+    for (var i = 0; i < list.users.length; i++) {
+        if (isNumeric(list.users[i].firstName) == true || isNumeric(list.users[i].lastName) == true) {
+            alert('Пожалуйста, не вводите цифры!');
+            location.reload();
+        }
+    }
 }
 
-list.getAllUsers().forEach(function (a, i) {
-    console.log(i + 1 + '. ' + a.firstName + ' ' + a.lastName + ', ' + 'дата регистрации: ' + a.regDate);
-});
+for (var i = 0; i < list.users.length; i++) {
+    console.log(i + 1 + '. ' + list.users[i].firstName + ' ' + list.users[i].lastName + ', ' + 'дата регистрации: ' + list.users[i].regDate);
+}
