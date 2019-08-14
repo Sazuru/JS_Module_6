@@ -21,7 +21,7 @@ function UserList() {
     this.getAllUsers = function () {
         return this.users;
     };
-};
+}
 var list = new UserList();
 
 while (userName !== null) {
