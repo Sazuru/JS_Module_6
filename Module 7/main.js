@@ -17,4 +17,8 @@ function Manager(firstName, lastName) {
     this.sayHello = function () {
         alert('Здравствуйте');
     }
+
+    this.changeName = function (name) {
+        this.firstName = name;
+    }
 }
