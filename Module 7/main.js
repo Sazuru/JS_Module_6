@@ -14,8 +14,12 @@ function Vehicle(model, color, passengers) {
     };
 
     this.startTheEngine = function () {
-        this.engineStarts = true;
-        console.log('Двигатель заведён');
+        if (this.engineStarts) {
+            console.log("Двигатель уже работает");
+        } else {
+            this.engineStarts = true;
+            console.log("Двигатель заведён");
+        }
     };
 
     this.stopTheEngine = function () {
@@ -32,8 +36,6 @@ function Car(model, color, passengers) {
 function Airplane(model, color, passengers) {
     Vehicle.apply(this, arguments);
     this.hasWings = true;
-
-
 }
 
 function Ship(model, color, passengers) {
