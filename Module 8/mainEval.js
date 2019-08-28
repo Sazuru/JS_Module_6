@@ -12,16 +12,6 @@
 //    console.log('Ошибка в вашем коде: ' + ex);
 //}
 
-//var userCode = document.querySelector('#btn');
-//userCode.addEventListener('click', function () {
-//    eval(text);
-//});
-
-//function evalCode() {
-//    var yourCode = document.querySelector('textarea').value;
-//    eval(yourCode);
-//}
-
 function testCode() {
     try {
         'use strict';
