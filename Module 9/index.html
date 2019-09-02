@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <title>JS course Module 9</title>
     <script src="main.js" defer></script>
+    <style>
+        #taskList {
+            cursor: pointer;
+        }
+
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +25,7 @@
         <li>Найти подработку</li>
     </ol>
     <form action="">
-        <input type="text" placeholder="Новая задача" id="task">
+        <input type="text" placeholder="Новая задача" id="newTask">
         <input type='button' onclick='addTask()' value='Добавить'>
     </form>
 </body></html>
