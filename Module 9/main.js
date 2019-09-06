@@ -4,23 +4,22 @@ var list = document.getElementById('taskList');
 
 function addTask() {
     var task = document.getElementById('newTask').value;
-    var lastChild = list.lastElementChild.innerHTML;
+    var entry = document.createElement('li');
     if (task == 0) {
         console.log('Ничего не введено!');
-    } else {
-        if (task == lastChild) {
-            var ask = confirm('Такая задача уже есть, добавить?')
-            if (ask === true) {
-                var entry = document.createElement('li');
-                entry.appendChild(document.createTextNode(task));
-                list.appendChild(entry);
+        return;
+    }
+    for (var i = 0; i < list.children.length; i++) {
+        if (task == list.children[i].innerHTML) {
+            if (confirm('Такая задача уже есть, добавить?')) {
+                break;
+            } else {
+                return;
             }
-        } else {
-            var entry = document.createElement('li');
-            entry.appendChild(document.createTextNode(task));
-            list.appendChild(entry);
         }
     }
+    entry.appendChild(document.createTextNode(task));
+    list.appendChild(entry);
 }
 
 list.onclick = function (e) {
