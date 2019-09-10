@@ -3,8 +3,8 @@
 var getText = document.getElementById('editable');
 
 function editText() {
-    var editButton = document.getElementById('edit')
-    if (getText.contentEditable == 'true') {
+    var editButton = document.getElementById('edit');
+    if (getText.contentEditable === 'true') {
         getText.contentEditable = 'false';
         editButton.setAttribute('value', 'Редактировать');
     } else {
@@ -19,5 +19,5 @@ function saveText() {
 
 function returnText() {
     var oldText = sessionStorage.getItem('save', getText.textContent);
-    getText.textContent = oldText.textContent;
+    getText.textContent = oldText;
 }
