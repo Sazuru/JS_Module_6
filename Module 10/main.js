@@ -4,15 +4,20 @@ var getText = document.getElementById('editable');
 
 function editText() {
     var editButton = document.getElementById('edit')
-    if (getText.contentEditable == "true") {
-        getText.contentEditable = "false";
+    if (getText.contentEditable == 'true') {
+        getText.contentEditable = 'false';
         editButton.setAttribute('value', 'Редактировать');
     } else {
-        getText.contentEditable = "true";
+        getText.contentEditable = 'true';
         editButton.setAttribute('value', 'Не редактировать');
     }
 }
 
 function saveText() {
-    sessionStorage.setItem("save", getText.textContent);
+    sessionStorage.setItem('save', getText.textContent);
+}
+
+function returnText() {
+    var oldText = sessionStorage.getItem('save', getText.textContent);
+    getText.textContent = oldText.textContent;
 }
