@@ -1,12 +1,18 @@
 'use strict';
 
+var getText = document.getElementById('editable');
+
 function editText() {
-    var edit = document.getElementById('editable');
-    if (edit.contentEditable == "true") {
-        edit.contentEditable = "false";
+    var editButton = document.getElementById('edit')
+    if (getText.contentEditable == "true") {
+        getText.contentEditable = "false";
+        editButton.setAttribute('value', 'Редактировать');
     } else {
-        edit.contentEditable = "true";
+        getText.contentEditable = "true";
+        editButton.setAttribute('value', 'Не редактировать');
     }
 }
 
-function saveText() {}
+function saveText() {
+    sessionStorage.setItem("save", getText.textContent);
+}
