@@ -1,0 +1,11 @@
+h2.text-center {
+    margin-top: 50px;
+}
+
+.ajax-block {
+    background: grey;
+    padding: 100px 100px;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 10px;
+}
