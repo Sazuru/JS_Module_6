@@ -39,7 +39,8 @@ window.onload = function () {
                 dropdown2.add(option);
             };
         } else {
-            // Reached the server, but it returned an error
+            'Произошла ошибка при получении ответа от сервера'
+            return;
         }
 
     }
@@ -47,28 +48,6 @@ window.onload = function () {
         console.error('An error occurred fetching the JSON from ' + url);
     };
     request.send();
-    //    var request = new XMLHttpRequest();
-    //    request.open('GET', urlLangs, true);
-    //    request.onload = function () {
-    //        if (request.status === 200) {
-    //            var data = JSON.parse(request.response);
-    //            var option;
-    //            var langs = data.langs;
-    //            for (var prop in langs) {
-    //                option = document.createElement('option');
-    //                option.text = langs[prop];
-    //                option.value = prop;
-    //                dropdown2.add(option);
-    //            };
-    //        } else {
-    //            // Reached the server, but it returned an error
-    //        }
-    //
-    //    }
-    //    request.onerror = function () {
-    //        console.error('An error occurred fetching the JSON from ' + url);
-    //    };
-    //    request.send();
 };
 
 function trans() {
@@ -88,7 +67,7 @@ function trans() {
     // Формируем полный адрес запроса:
     url += '?key=' + API_KEY; // добавляем к запросу ключ API
     url += text; // текст для перевода
-    url += '&lang=' + origin + '-' + translation; // направление перевода: с русского на английский
+    url += '&lang=' + origin + '-' + translation; // направление перевода
 
     var translate = document.querySelector('.translate');
 

@@ -2,8 +2,9 @@
 
 html,
 body {
-    width: 100%;
+    width: 95%;
     height: 95%;
+    margin: 10px auto;
 }
 
 body {
@@ -11,6 +12,35 @@ body {
     font-size: 36px;
     background: #00f;
     color: #fff;
+}
+
+input[type='text'] {
+    width: 300px;
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+}
+
+select {
+    border-radius: 8px;
+    font-size: 13px;
+    border: 1px solid #cecece;
+}
+
+input[type='button'] {
+    cursor: pointer;
+    border: 1px solid #cecece;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 6px 16px;
+    width: 120px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .translate {
