@@ -1,4 +1,4 @@
-window.onload = function () {
+function trans() {
 
     // Создаем объект XMLHttpRequest, при помощи которого будем отправлять запрос
     var req = new XMLHttpRequest();
@@ -10,9 +10,13 @@ window.onload = function () {
     // Сохраняем адрес API
     var url = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
 
+    var word = document.getElementById("word");
+
+    var text = '&text=' + word.value;
+
     // Формируем полный адрес запроса:
     url += '?key=' + API_KEY; // добавляем к запросу ключ API
-    url += '&text=зайчики'; // текст для перевода
+    url += text; // текст для перевода
     url += '&lang=ru-en'; // направление перевода: с русского на английский
 
     // Таким образом формируется строка вида:
@@ -46,5 +50,4 @@ window.onload = function () {
     // Открываем соединение и отправляем
     req.open('get', url);
     req.send();
-
 }
