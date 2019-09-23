@@ -1,3 +1,19 @@
+h2 {
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    width: 100%;
+    opacity: 0;
+}
+
+h2 span {
+    color: white;
+    font: bold 60px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
 .football {
     position: relative;
     margin-top: 20px;
@@ -5,6 +21,7 @@
 }
 
 .field {
+    position: relative;
     width: 100%;
     border-radius: 10px;
 }
@@ -15,4 +32,14 @@
     left: 0;
     width: 100px;
     height: 100px;
+}
+
+.btn {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.goal {
+    opacity: 1;
 }
