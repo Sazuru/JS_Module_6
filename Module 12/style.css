@@ -34,12 +34,6 @@ h2 span {
     height: 100px;
 }
 
-.btn {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
 .goal {
     opacity: 1;
 }

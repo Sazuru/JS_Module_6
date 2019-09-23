@@ -2,13 +2,13 @@ $('.ball').on('click', function () {
     var posY = 1 + Math.max(Math.random() * 500);
     if ($('.ball').css('left') == '50px') {
         $('.ball').animate({
-            top: +posY,
+            top: posY,
             left: '1270px'
         }, 500);
         goal();
     } else {
         $('.ball').animate({
-            top: +posY,
+            top: posY,
             left: '50px'
         }, 500);
         goal();
