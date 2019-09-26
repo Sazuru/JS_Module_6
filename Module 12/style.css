@@ -10,7 +10,6 @@ span {
     position: absolute;
     top: 5%;
     left: 45%;
-    width: 100%;
     z-index: 1000;
 }
 
@@ -42,7 +41,6 @@ span {
     position: absolute;
     top: 43%;
     left: 44%;
-    width: 100%;
     opacity: 0;
 }
 
