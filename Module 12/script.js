@@ -1,9 +1,9 @@
-let kick = false;
-let ballWidth = $('.ball').width();
-let ballHeight = $('.ball').height();
+var kick = false;
+var ballWidth = $('.ball').width();
+var ballHeight = $('.ball').height();
 
 var posX = function () {
-    let clientWidth = $(window).width();
+    var clientWidth = $(window).width();
     if (kick)
         return clientWidth - ballWidth - 20;
     else
@@ -22,9 +22,9 @@ $('.ball').click(function () {
         left: x,
         top: y
     }, 500, function () {
-        let centerHeight = $('.field').height() / 2;
-        let minY = centerHeight - ballHeight;
-        let maxY = centerHeight + ballHeight;
+        var centerHeight = $('.field').height() / 2;
+        var minY = centerHeight - ballHeight;
+        var maxY = centerHeight + ballHeight;
         if (y >= minY && (y + ballHeight) <= maxY) {
             console.log('Goal!');
             $("h2").addClass("goal");
@@ -54,7 +54,7 @@ function resultRight() {
 $(window).resize(function () {
     if (!kick) return;
 
-    let clientWidth = $(window).width() - ballWidth - 20;
+    var clientWidth = $(window).width() - ballWidth - 20;
     $('.ball').css({
         left: clientWidth
     });
