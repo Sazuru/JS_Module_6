@@ -30,7 +30,7 @@ class Comments extends React.Component {
           ...this.state.comments,
           {
             id: this.state.comments.length
-              ? this.state.comments.reduce((p, c) => (p.id > c.id ? p : c)).id +
+              ? this.state.comments.reduce((a, b) => (a.id > b.id ? a : b)).id +
                 1
               : 1,
             name: this.state.form.name,
