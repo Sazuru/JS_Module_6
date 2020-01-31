@@ -1,12 +1,3 @@
-// import React from "react";
-// import "./App.css";
-// import CommentsContainer from "./components/CommentsContainer";
-
-// function App() {
-//   return <CommentsContainer />;
-// }
-// export default App;
-
 import React, { Component } from "react";
 import "./App.css";
 class App extends Component {
@@ -70,7 +61,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      {/* <div className="App">
         {this.state.comments.map(comment => (
           <div key={comment.id}>
             <span style={{ fontStyle: "italic" }}>
@@ -83,8 +74,8 @@ class App extends Component {
             </button>
           </div>
         ))}
-        <div>
-          <label>
+        <div> */}
+          {/* <label>
             Имя:{" "}
             <input
               type="text"
@@ -101,7 +92,7 @@ class App extends Component {
               onChange={this.handleChange}
             ></textarea>
           </label>
-          <button onClick={this.addComment}>Добавить комментарий</button>
+          <button onClick={this.addComment}>Добавить комментарий</button> */}
         </div>
       </div>
     );
